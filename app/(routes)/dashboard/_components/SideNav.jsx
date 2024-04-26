@@ -44,9 +44,8 @@ function SideNav() {
       <Image src={"/logo.svg"} alt="logo" width={160} height={100} />
       <div className="mt-5">
         {menuList.map((menu, index) => (
-          <Link href={menu.path}>
+          <Link key={menu.id} href={menu.path}>
             <h2
-              key={menu.id}
               className={`flex gap-2 items-center text-gray-500 font-medium p-5 mt-2 cursor-pointer rounded-md
           hover:text-primary hover:bg-purple-100
           ${path == menu.path && "text-primary bg-purple-100"}
