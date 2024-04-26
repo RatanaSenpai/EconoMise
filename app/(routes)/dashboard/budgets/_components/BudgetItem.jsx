@@ -1,4 +1,3 @@
-import { Budgets } from "@/utils/schema";
 import Link from "next/link";
 import React from "react";
 
