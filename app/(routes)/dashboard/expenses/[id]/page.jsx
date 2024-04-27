@@ -7,6 +7,8 @@ import React, { useEffect, useState } from "react";
 import BudgetItem from "../../budgets/_components/BudgetItem";
 import AddExpense from "../_components/AddExpense";
 import ExpenseListTable from "../_components/ExpenseListTable";
+import { Trash } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 function ExpensesScreen({ params }) {
   const { user } = useUser();
@@ -45,7 +47,13 @@ function ExpensesScreen({ params }) {
 
   return (
     <div className="p-5">
-      <h2 className="text-2xl font-bold">My Expenses</h2>
+      <h2 className="text-2xl font-bold flex justify-between items-center">
+        My Expenses
+        <Button className="flex gap-2" variant="destructive">
+          {" "}
+          <Trash /> Delete
+        </Button>
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 mt-6 gap-5">
         {budgetInfo ? (
           <BudgetItem budget={budgetInfo} />
