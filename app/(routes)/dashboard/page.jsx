@@ -5,6 +5,7 @@ import CardInfo from "./_components/CardInfo";
 import { db } from "@/utils/dbConfig";
 import { desc, eq, getTableColumns, sql } from "drizzle-orm";
 import { Budgets, Expenses } from "@/utils/schema";
+import BudgetList from "./budgets/_components/BudgetList";
 
 function Dashboard() {
   const { user } = useUser();
