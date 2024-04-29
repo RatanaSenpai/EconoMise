@@ -90,7 +90,7 @@ function EditBudget({ budgetInfo, refreshData }) {
                       Budget Name
                     </h2>
                     <Input
-                      placeholder="Home Decor for example"
+                      placeholder="e.g. Vacation, Groceries, Sports..."
                       onChange={(e) => setName(e.target.value)}
                       defaultValue={budgetInfo?.name}
                     />
@@ -102,7 +102,7 @@ function EditBudget({ budgetInfo, refreshData }) {
                     <Input
                       type="number"
                       defaultValue={budgetInfo?.amount}
-                      placeholder="1000€ for example"
+                      placeholder="e.g. 500€"
                       onChange={(e) => setAmount(e.target.value)}
                     />
                   </div>

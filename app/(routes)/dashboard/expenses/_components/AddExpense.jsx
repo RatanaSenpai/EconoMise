@@ -36,7 +36,7 @@ function AddExpense({ budgetId, user, refreshData }) {
         <h2 className="mt-5 mb-2 text-black font-medium my-1">Expense Name</h2>
         <Input
           value={name}
-          placeholder="Home Decor for example"
+          placeholder="e.g. Vacation, Groceries, Sports..."
           onChange={(e) => setName(e.target.value)}
         />
       </div>
@@ -46,7 +46,7 @@ function AddExpense({ budgetId, user, refreshData }) {
         </h2>
         <Input
           value={amount}
-          placeholder="100€ for example"
+          placeholder="e.g. 500€"
           onChange={(e) => setAmount(e.target.value)}
         />
       </div>

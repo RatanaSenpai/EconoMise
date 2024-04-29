@@ -83,7 +83,7 @@ function CreateBudget({ refreshData }) {
                       Budget Name
                     </h2>
                     <Input
-                      placeholder="Home Decor for example"
+                      placeholder="e.g. Vacation, Groceries, Sports..."
                       onChange={(e) => setName(e.target.value)}
                     />
                   </div>
@@ -93,7 +93,7 @@ function CreateBudget({ refreshData }) {
                     </h2>
                     <Input
                       type="number"
-                      placeholder="1000€ for example"
+                      placeholder="e.g. 500€"
                       onChange={(e) => setAmount(e.target.value)}
                     />
                   </div>
