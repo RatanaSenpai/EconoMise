@@ -7,6 +7,7 @@ import { desc, eq, getTableColumns, sql } from "drizzle-orm";
 import { Budgets, Expenses } from "@/utils/schema";
 import BudgetList from "./budgets/_components/BudgetList";
 import BarChartDashboard from "./_components/BarChartDashboard";
+import BudgetItem from "./budgets/_components/BudgetItem";
 
 function Dashboard() {
   const { user } = useUser();
@@ -37,11 +38,16 @@ function Dashboard() {
         Here's what happening with your money, Let's manage your expenses
       </p>
       <CardInfo budgetList={budgetList} />
-      <div className="grid grid-cols-1 md:grid-cols-3 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 mt-6 gap-5">
         <div className="md:col-span-2">
           <BarChartDashboard budgetList={budgetList} />
         </div>
-        <div>Other Content</div>
+        <div className="grid gap-5">
+          <h2 className="font-bold text-lg">Latest Budgets</h2>
+          {budgetList.map((budget, index) => (
+            <BudgetItem budget={budget} key={index} />
+          ))}
+        </div>
       </div>
     </div>
   );
