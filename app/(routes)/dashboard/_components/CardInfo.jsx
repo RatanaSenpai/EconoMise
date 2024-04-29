@@ -26,21 +26,21 @@ function CardInfo({ budgetList }) {
         <div className="mt-7 grid grid-cols-1 md:grid-cols-3 lg:grid-col-3 gap-5">
           <div className="p-7 border rounded-lg flex items-center justify-between">
             <div>
-              <h2 className="text-sm">Total Budget</h2>
+              <h2 className="text-sm">Total des budgets</h2>
               <h2 className="font-bold text-2xl">{totalBudget}€ </h2>
             </div>
             <PiggyBank className="bg-primary p-3 h-12 w-12 rounded-full text-white" />
           </div>
           <div className="p-7 border rounded-lg flex items-center justify-between">
             <div>
-              <h2 className="text-sm">Total Spend</h2>
+              <h2 className="text-sm">Total dépensé</h2>
               <h2 className="font-bold text-2xl">{totalSpend}€</h2>
             </div>
             <PiggyBank className="bg-primary p-3 h-12 w-12 rounded-full text-white" />
           </div>
           <div className="p-7 border rounded-lg flex items-center justify-between">
             <div>
-              <h2 className="text-sm">Number of Budget</h2>
+              <h2 className="text-sm">Nombre de budgets</h2>
               <h2 className="font-bold text-2xl">{budgetList?.length}</h2>
             </div>
             <Wallet className="bg-primary p-3 h-12 w-12 rounded-full text-white" />

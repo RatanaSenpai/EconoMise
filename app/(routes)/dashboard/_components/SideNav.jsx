@@ -22,15 +22,9 @@ function SideNav() {
     },
     {
       id: 3,
-      name: "Expenses",
+      name: "Dépenses",
       icon: ReceiptText,
       path: "/dashboard/expenses",
-    },
-    {
-      id: 4,
-      name: "Upgrade",
-      icon: ShieldCheck,
-      path: "/dashboard/upgrade",
     },
   ];
   const path = usePathname();
@@ -59,7 +53,7 @@ function SideNav() {
       </div>
       <div className="fixed bottom-10 p-5 flex gap-2 items-center">
         <UserButton />
-        Profile
+        Profil
       </div>
     </div>
   );
