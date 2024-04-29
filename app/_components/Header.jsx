@@ -9,7 +9,7 @@ function Header() {
   const { user, isSignedIn } = useUser();
   return (
     <div className="p-5 flex justify-between items-cente border shadow-effect">
-      <Image src={"./logo.svg"} width={160} height={100} alt="logo" />
+      <Image src={"/logo.png"} width={180} height={100} alt="logo" />
       {isSignedIn ? (
         <UserButton />
       ) : (
