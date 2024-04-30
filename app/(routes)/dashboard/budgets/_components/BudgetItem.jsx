@@ -5,7 +5,7 @@ function BudgetItem({ budget }) {
   const calculateProgressPerc = () => {
     // (spend/total)*100
     const perc = (budget.totalSpend / budget.amount) * 100;
-    return perc.toFixed(2);
+    return Math.min(perc, 100).toFixed(2);
   };
 
   return (
