@@ -1,17 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { UserButton, useUser } from "@clerk/nextjs";
-import CardInfo from "./_components/CardInfo";
+import ExpenseListTable from "./_components/ExpenseListTable";
+import { useUser } from "@clerk/nextjs";
 import { db } from "@/utils/dbConfig";
 import { desc, eq, getTableColumns, sql } from "drizzle-orm";
 import { Budgets, Expenses } from "@/utils/schema";
-import BarChartDashboard from "./_components/BarChartDashboard";
-import BudgetItem from "./budgets/_components/BudgetItem";
-import ExpenseListTable from "./expenses/_components/ExpenseListTable";
 
-function Dashboard() {
+function LatestExpenses() {
   const { user } = useUser();
-
   const [budgetList, setBudgetList] = useState([]);
   const [expensesList, setExpensesList] = useState([]);
 
@@ -52,29 +48,14 @@ function Dashboard() {
   };
 
   return (
-    <div className="p-5">
-      <h2 className="font-bold text-3xl">Hey, {user?.fullName} ✌🏻</h2>
-      <p className="text-gray-500 my-3">
-        Voici l'état de tes dépenses, gérons tes budgets!
-      </p>
-      <CardInfo budgetList={budgetList} />
-      <div className="grid grid-cols-1 md:grid-cols-3 mt-6 gap-5">
-        <div className="md:col-span-2">
-          <BarChartDashboard budgetList={budgetList} />
-          <ExpenseListTable
-            expensesList={expensesList}
-            refreshData={() => getBudgetList()}
-          />
-        </div>
-        <div className="grid gap-5">
-          <h2 className="font-bold text-lg">Derniers budgets</h2>
-          {budgetList.map((budget, index) => (
-            <BudgetItem budget={budget} key={index} />
-          ))}
-        </div>
-      </div>
+    <div className="p-10">
+      <h2 className="font-bold text-3xl">My Last Expenses</h2>
+      <ExpenseListTable
+        expensesList={expensesList}
+        refreshData={() => getBudgetList()}
+      />
     </div>
   );
 }
 
-export default Dashboard;
+export default LatestExpenses;
